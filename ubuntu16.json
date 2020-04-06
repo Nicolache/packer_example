@@ -3,21 +3,17 @@
     {
     "type": "googlecompute",
     "project_id": "feisty-album-268710",
-    "image_name": "reddit-base-{{timestamp}}",
+    "image_name": "with-docker-{{timestamp}}",
     "source_image": "ubuntu-1604-xenial-v20200223",
-    "zone": "europe-west1-b",
-    "ssh_username": "appuser",
+    "zone": "europe-west6-b",
+    "ssh_username": "dockeruser",
     "machine_type": "f1-micro"
     }
   ],
   "provisioners": [
     {
     "type": "shell",
-    "script": "scripts/install_ruby.sh"
-    },
-    {
-    "type": "shell",
-    "script": "scripts/install_mongodb.sh",
+    "script": "scripts/install_docker.sh",
     "execute_command": "sudo {{.Path}}"
     }
   ]
